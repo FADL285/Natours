@@ -8,10 +8,31 @@
 
 html {
   scroll-behavior: smooth;
-  // This define what 1rem is
+
+  @include respond(big-desktop) {
+    // 1rem = 12px
+    font-size: 75%;
+  }
+
+  // This define what 1rem is [1rem = 10px]
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    // 1rem = 9px
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    // 1rem = 8px
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-land) {
+    padding: 0;
+  }
 }
